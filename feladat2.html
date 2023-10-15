@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.feladat</title>
+    <script>
+
+        
+       
+
+        function Adatok(){
+        let A=parseFloat(document.getElementById("A").value);
+        console.log(A);
+      
+        let B=parseFloat(document.getElementById("B").value);
+        console.log(B);
+     
+        let C=parseFloat(document.getElementById("C").value);
+        console.log(C);
+
+        let kerulet = A + B + C;
+        console.log(kerulet);
+        //Ezt a Területes dolgot nem tudttam
+        //let S = (A + B + C)/2;
+        //Math.sqrt(S*(S-A)(S-B)(S-C)) = Terulet;
+
+        let eredmeny="Kerület:" + kerulet; // + "Terület:"+ Terulet;
+
+        document.getElementById("output").innerHTML=eredmeny;
+
+        }
+
+        
+        
+      
+        
+
+        
+
+
+    </script>
+</head>
+<body>
+    <main>
+        <p>Kérem a háromszög A oldalát:</p>
+        <input id="A" type="number">
+        <br>
+        <p>Kérem a háromszög B oldalát:</p>
+        <input id="B" type="number">
+        <br>
+        <p>Kérem a háromszög C oldalát:</p>
+        <input id="C" type="number">
+        <br>
+        <br>
+        <button onclick="Adatok()" type="submit">Submit</button>
+        <p id="output"></p>
+        
+
+    </main>
+    
+</body>
+</html>

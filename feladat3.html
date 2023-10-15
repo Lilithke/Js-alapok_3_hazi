@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. feladat</title>
+    <script>
+        
+        function  koszontes(){
+        
+        alert(hour);
+        
+        if (6<hour && hour<12) {
+                
+                return "jó reggelt";
+            }
+            if (18>hour && hour> 12) {
+                
+                return "jó napot!";
+            } else {
+                
+                return "Jó estét!";
+            }
+         
+        
+        }
+
+        const d = new Date();
+        let hour = d.getHours();
+        const napszak=document.getElementById("koszontes")
+        napszak.innerHTML = hour;
+       
+
+    </script>
+</head>
+<body>
+    <main>
+        <button onclick="koszontes()">Köszöntés</button>
+</main>
+    
+</body>
+</html>

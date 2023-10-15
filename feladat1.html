@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 feladat</title>
+    <script>
+        function veletlen(minimum, maximum) {
+            return Math.trunc(Math.random() * (maximum - minimum + 1)) + minimum;
+
+        }
+
+        function valasz(gondoltSzam,kitalalando) {
+           
+            if (gondoltSzam < kitalalando) {
+                console.log("A véletlen szám nagyobb");
+                return "A véletlen szám nagyobb";
+            }
+            if (kitalalando< gondoltSzam) {
+                console.log("A véletlen szám kisebb");
+                return "A véletlen szám kisebb";
+            } else {
+                console.log("Eltaláltad");
+                return "Eltaláltad";
+            }
+            return "váratlan hiba";
+        }
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const veletlenSzam = document.getElementById("veletlenSzam");
+            let veletlenSzamErteke = veletlenSzam.value;
+            veletlenSzam.addEventListener("click", function() {
+                veletlenSzamErteke= veletlen(1, 100);
+                console.log(veletlenSzamErteke);
+
+            });
+            const input=document.getElementById("tippeles");
+            input.addEventListener("click", function () {
+                let tipp = parseInt(document.getElementById("bevitel").value);
+                console.log(tipp);
+       
+                const eredmeny = document.getElementById("eredmeny");
+                eredmeny.innerHTML = valasz(tipp,veletlenSzamErteke);
+
+            })
+        })
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <main>
+        
+        <button id="veletlenSzam">Véletlen szám</button>
+        <input id="bevitel" type="number" min="1" max="100" placeholder="Tipp 1 és 100 között">
+        <button id="tippeles">eredmeny</button>
+        <p id="eredmeny"></p>
+    </main>
+
+</body>
+
+</html>
